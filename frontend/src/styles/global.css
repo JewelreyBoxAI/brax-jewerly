@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .brax-chat-widget {
+    font-family: 'Inter', sans-serif;
+    --brax-gold: #D4AF37;
+    --brax-dark-gold: #B8941F;
+    --brax-navy: #1B2951;
+    --brax-cream: #F8F6F0;
+    --brax-slate: #64748B;
+  }
+  
+  .brax-chat-open {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .brax-chat-close {
+    animation: slideDown 0.2s ease-in;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+  }
+  
+  .message-bubble {
+    animation: messageAppear 0.4s ease-out;
+  }
+  
+  @keyframes messageAppear {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
